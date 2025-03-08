@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FlowGile | Smooth Workflow Management</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header-container">
+				<div class="left">
+					<h1>FlowGile</h1>
+					<p>Smooth Workflow Management</p>
+				</div>
+				<div class="middle">
+					<h2>Project Name - To Do App</h2>
+				</div>
+				<div class="right">
+					<button class="crt-tsk-btn" onclick="showModal()">Create New Task</button>
+				</div>
+			</div>
+			<div class="board-container">
+				<div class="columns new">
+					<h4>New</h4>
+					<div class="tasks" id="new"></div>
+				</div>
+				<div class="columns in-progress">
+					<h4>In Progress</h4>
+					<div class="tasks" id="inProgress"></div>
+				</div>
+				<div class="columns code-review">
+					<h4>Code Review</h4>
+					<div class="tasks" id="codeReview"></div>
+				</div>
+				<div class="columns dev-complete">
+					<h4>Dev Complete</h4>
+					<div class="tasks" id="devComplete"></div>
+				</div>
+				<div class="columns testing">
+					<h4>QA Testing</h4>
+					<div class="tasks" id="testing"></div>
+				</div>
+				<div class="columns done">
+					<h4>Done</h4>
+					<div class="tasks" id="done"></div>
+				</div>
+			</div>
+			<div class="modal" id="modal">
+				<div class="modal-header">
+					<h3>Create New Task</h3>
+					<span class="cancel-modal" onclick="hideModal()"><img src="./src/cancel.png" alt="cancel" width="12px" /></span>
+				</div>
+				<div class="modal-content">
+					<label for="title">Title:</label>
+					<input type="text" id="title" />
+					<label for="description">Description:</label>
+					<input type="text" id="description" />
+					<div class="dropdowns">
+						<div class="story-point-container">
+							<label for="storyPoint">Story Points:</label>
+							<select name="storyPoint" id="storyPoint">
+								<option value="select">select</option>
+								<option value="1">1 SP</option>
+								<option value="2">2 SP</option>
+								<option value="3">3 SP</option>
+								<option value="4">4 SP</option>
+								<option value="5">5 SP</option>
+							</select>
+							<span class="info">1 SP - 1 Day *</span>
+						</div>
+						<div class="priority-container">
+							<label for="priority">Priority:</label>
+							<select name="priority" id="priority">
+								<option value="Select">Select</option>
+								<option value="low">Low</option>
+								<option value="medium">Medium</option>
+								<option value="high">High</option>
+							</select>
+						</div>
+						<button class="crt-tsk-btn" onclick="createTask()">Create Task</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>
